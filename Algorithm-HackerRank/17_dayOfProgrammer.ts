@@ -1,5 +1,4 @@
-function dayOfProgrammer(year) {
-    // Write your code here
+function dayOfProgrammer(year: number): string {
     let dayOfProgrammer= 256;
 
     let leapYear = false;
@@ -15,7 +14,7 @@ function dayOfProgrammer(year) {
     while(monthCount <= 12){
 
         if(dayOfProgrammer>31){
-            if(monthCount % 2 !== 0 || (monthCount % 2 === 0 && monthCount === 8)){
+            if( (monthCount % 2 !== 0 && monthCount < 8 )|| (monthCount % 2 === 0 && monthCount > 7)){
                 dayOfProgrammer = dayOfProgrammer-31
             }else if (monthCount % 2 === 0 && monthCount === 2){
                 leapYear ? dayOfProgrammer = dayOfProgrammer - 29 : dayOfProgrammer = dayOfProgrammer - 28
@@ -39,6 +38,3 @@ function dayOfProgrammer(year) {
     console.log(day+"."+month+"."+year)
     return day+"."+month+"."+year
 }
-
-dayOfProgrammer(1800)
-//https://www.hackerrank.com/challenges/day-of-the-programmer/problem
